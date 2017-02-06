@@ -7,6 +7,7 @@ var cookieParser = require('cookie-parser');
 var route_api = require('./routes/api');
 var route_twitter = require('./routes/twitter');
 var env = require('dotenv/config');
+var route_dev = require('./routes/dev');
 
 
 app.use(express.static('public'));
@@ -17,6 +18,7 @@ app.use(cookieParser());
 //Routes
 app.use('/api', route_api);
 app.use('/twitter', route_twitter);
+app.use('/dev', route_dev);
 
 //index
 app.get('/', function(req, res){

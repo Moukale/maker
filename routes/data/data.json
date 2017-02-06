@@ -1,0 +1,50 @@
+{
+    "listOfRecipies":[
+        {"name":"Conoa citron",
+        "ingredients":[{"id":1,"quantity":1},{"id":4,"quantity":2},{"id":4,"quantity":1}]},
+        {"name":"Pentao",
+        "ingredients":[{"id":3,"quantity":1},{"id":5,"quantity":1},{"id":9,"quantity":1}]},
+        {"name":"Zen",
+        "ingredients":[{"id":6,"quantity":1},{"id":2,"quantity":2},{"id":8,"quantity":2}]},
+        {"name":"Easy",
+        "ingredients":[{"id":7,"quantity":2}]}
+        ],
+    "listOfFruits":
+    [{
+    "id":1,
+    "name": "citron",
+    "quantity":3    
+},{
+    "id":2,
+    "name": "orange",
+    "quantity":3    
+},{
+    "id":3,
+    "name": "pamblemousse",
+    "quantity":3    
+},{
+    "id":4,
+    "name": "ananas",
+    "quantity":3    
+},{
+    "id":5,
+    "name": "banane",
+    "quantity":3    
+},{
+    "id":6,
+    "name": "mangue",
+    "quantity":3    
+},{
+    "id":7,
+    "name": "abricot",
+    "quantity":3    
+},{
+    "id":8,
+    "name": "goyave",
+    "quantity":3    
+},{
+    "id":9,
+    "name": "menthe",
+    "quantity":3    
+}
+]}
