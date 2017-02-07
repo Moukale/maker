@@ -1,4 +1,5 @@
 var express = require('express');
+var helmet = require('helmet');
 var app = express();
 var mongojs = require('mongojs');
 var db = mongojs('fintechlist', ['fintechlist', 'privatelist']);
@@ -9,7 +10,7 @@ var route_twitter = require('./routes/twitter');
 var env = require('dotenv/config');
 var route_dev = require('./routes/dev');
 
-
+app.use(helmet());
 app.use(express.static('public'));
 app.use(express.static(__dirname + "/start/auth"));
 app.use(bodyparser.json());

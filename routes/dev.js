@@ -1,4 +1,5 @@
 var express = require('express');
+var fs = require('fs');
 
 var router = express.Router();
 
@@ -43,6 +44,16 @@ router.get('/recipy/:id', function(req, res){
 
 router.get('/fruits', function(req, res){
     res.json(data.listOfFruits);
+})
+
+router.get('/save/:id', function(req, res){
+    fs.writeFile("./savefile.data", JSON.stringify(data.listOfRecipies[req.params.id]), function(err) {
+    if(err) {
+        return console.log(err);
+    }
+
+    res.send("The file was saved!");
+});
 })
 
 module.exports = router;
