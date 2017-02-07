@@ -5,10 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "node index.js",
-    "start": "nodemon server.js ",
-    "tsc": "tsc",
-    "tsc:w": "tsc -w",
-    "lite": "lite-server"
+    "start": "nodemon server.js "
   },
   "author": "",
   "license": "ISC",
