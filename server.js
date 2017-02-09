@@ -2,28 +2,36 @@ var express = require('express');
 var helmet = require('helmet');
 var app = express();
 var mongojs = require('mongojs');
-var db = mongojs('fintechlist', ['fintechlist', 'privatelist']);
 var bodyparser = require('body-parser');
 var cookieParser = require('cookie-parser');
-var route_api = require('./routes/api');
-var route_twitter = require('./routes/twitter');
-var env = require('dotenv/config');
-var route_dev = require('./routes/dev');
 
+var db = mongojs('fintechlist', ['fintechlist', 'privatelist']);
+var env = require('dotenv/config');
+
+//config
 app.use(helmet());
-app.use(express.static('public'));
-app.use(express.static(__dirname + "/start/auth"));
 app.use(bodyparser.json());
 app.use(cookieParser());
 
+// set the view engine to ejs
+app.set('view engine', 'ejs');
+
 //Routes
-app.use('/api', route_api);
-app.use('/twitter', route_twitter);
-app.use('/dev', route_dev);
+app.use('/api', require('./routes/api'));
+app.use('/twitter', require('./routes/twitter'));
+app.use('/dev', require('./routes/dev'));
+
+app.use(express.static('public'));
+app.use(express.static("node_modules"));
 
 //index
 app.get('/', function(req, res){
     res.send("Hello word from server.js");
+});
+
+// index page 
+app.get('/test', function(req, res) {
+    res.render('./page/test');
 });
 
 //////
