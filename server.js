@@ -22,7 +22,7 @@ app.use('/twitter', require('./routes/twitter'));
 app.use('/dev', require('./routes/dev'));
 
 app.use(express.static('public'));
-app.use(express.static(__dirname + "/start/auth"));
+app.use(express.static("node_modules"));
 
 //index
 app.get('/', function(req, res){
@@ -31,7 +31,7 @@ app.get('/', function(req, res){
 
 // index page 
 app.get('/test', function(req, res) {
-    res.render('page/test');
+    res.render('./page/test');
 });
 
 //////
