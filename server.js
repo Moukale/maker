@@ -9,7 +9,7 @@ var db = mongojs('fintechlist', ['fintechlist', 'privatelist']);
 var env = require('dotenv/config');
 
 //config
-app.use(helmet());
+app.use(helmet());//This one is for security purpose
 app.use(bodyparser.json());
 app.use(cookieParser());
 
@@ -22,7 +22,7 @@ app.use('/twitter', require('./routes/twitter'));
 app.use('/dev', require('./routes/dev'));
 
 app.use(express.static('public'));
-app.use(express.static("node_modules"));
+app.use('/node_modules',express.static("node_modules"));
 
 //index
 app.get('/', function(req, res){
@@ -34,7 +34,7 @@ app.get('/test', function(req, res) {
     res.render('./page/test');
 });
 
-//////
+////// START TO LISTEN
 var port = process.env.PORT || 3000;
 app.listen(port);
 console.log("Server running on port "+port);

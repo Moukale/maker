@@ -10,3 +10,6 @@ TOKEN_SECRET = xxx
 
 #security check
 https://expressjs.com/en/advanced/best-practice-security.html
+
+#TO DO
+- Need to add Webpack to bundle
