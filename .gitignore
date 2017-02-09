@@ -1,7 +1,4 @@
 .env
-
 savefile.data
-
-
 npm-debug.log
 node_modules

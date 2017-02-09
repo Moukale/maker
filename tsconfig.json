@@ -1,4 +1,8 @@
 {
     "compileOnSave": true,
-    "allowJs": true
+    "allowJs": true,
+     "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ]
 }
